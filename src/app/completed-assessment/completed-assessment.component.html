@@ -1,0 +1,41 @@
+<mat-toolbar color="primary"><img src="https://thechurchco-production.s3.amazonaws.com/uploads/sites/2207/2020/04/d05e33bb-af40-43d4-9868-b372a4733dcc@2x-1.png" style="height:56px;"><span style="margin-left: 32px;">Assessment Complete</span></mat-toolbar>
+
+<div fxLayout="column" fxLayoutAlign="center center" style="height: calc(100vh - 64px); max-width: 600px;">
+  <h2 style="text-align: center; margin: 16px auto;">Based on the results of your assessment we recommend you look at
+    the following resources:</h2>
+  <div class="guide-container">
+    <div class="guide-link">
+      <a mat-button href="google.com" *ngIf="assessment.bibleStudyLevel === 1">Bible Study Guide 101</a>
+      <a mat-button href="google.com" *ngIf="assessment.bibleStudyLevel === 2">Bible Study Guide 201</a>
+      <a mat-button href="google.com" *ngIf="assessment.bibleStudyLevel === 3">Bible Study Guide 301</a>
+      <a mat-button href="google.com" *ngIf="assessment.bibleStudyLevel === 4">Bible Study Guide 401</a>
+    </div>
+    <div class="guide-link">
+      <a mat-button href="google.com" *ngIf="assessment.prayerLevel === 1">Prayer Guide 101</a>
+      <a mat-button href="google.com" *ngIf="assessment.prayerLevel === 2">Prayer Guide 201</a>
+      <a mat-button href="google.com" *ngIf="assessment.prayerLevel === 3">Prayer Guide 301</a>
+      <a mat-button href="google.com" *ngIf="assessment.prayerLevel === 4">Prayer Guide 401</a>
+    </div>
+    <div class="guide-link">
+      <a mat-button href="google.com" *ngIf="assessment.serviceLevel === 1">Service Guide 101</a>
+      <a mat-button href="google.com" *ngIf="assessment.serviceLevel === 2">Service Guide 201</a>
+      <a mat-button href="google.com" *ngIf="assessment.serviceLevel === 3">Service Guide 301</a>
+      <a mat-button href="google.com" *ngIf="assessment.serviceLevel === 4">Service Guide 401</a>
+    </div>
+    <div class="guide-link">
+      <a mat-button href="google.com" *ngIf="assessment.givingLevel === 1">Giving Guide 101</a>
+      <a mat-button href="google.com" *ngIf="assessment.givingLevel === 2">Giving Guide 201</a>
+      <a mat-button href="google.com" *ngIf="assessment.givingLevel === 3">Giving Guide 301</a>
+      <a mat-button href="google.com" *ngIf="assessment.givingLevel === 4">Giving Guide 401</a>
+    </div>
+    <div class="guide-link">
+      <a mat-button href="google.com" *ngIf="assessment.evangelismLevel === 1">Evangelism Guide 101</a>
+      <a mat-button href="google.com" *ngIf="assessment.evangelismLevel === 2">Evangelism Guide 201</a>
+      <a mat-button href="google.com" *ngIf="assessment.evangelismLevel === 3">Evangelism Guide 301</a>
+      <a mat-button href="google.com" *ngIf="assessment.evangelismLevel === 4">Evangelism Guide 401</a>
+    </div>
+  </div>
+  <h3 style="text-align: center; margin: 16px auto;">If you have gone through all of our guides or feel that your
+    spiritual walk has shifted feel free to retake the assessment.</h3>
+  <button mat-raised-button color="primary" (click)="retakeAssessment()">Re-take Assessment</button>
+</div>

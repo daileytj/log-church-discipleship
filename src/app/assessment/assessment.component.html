@@ -1,0 +1,135 @@
+<mat-toolbar color="primary"><img
+    src="https://thechurchco-production.s3.amazonaws.com/uploads/sites/2207/2020/04/d05e33bb-af40-43d4-9868-b372a4733dcc@2x-1.png"
+    style="height:56px;"><span style="margin-left: 32px;">Spiritual Assessment</span></mat-toolbar>
+<mat-horizontal-stepper #stepper *ngIf="isAssessmentStarted">
+  <mat-step>
+    <ng-template matStepLabel>Bible Study</ng-template>
+    <h2 class="stepper-title">How would you best describe your Bible study habits?</h2>
+    <div class="card-row" fxLayout="row" fxLayoutGap="16px" fxLayout.lt-sm="column">
+      <mat-card fxFlex matRipple class="answer-card" [class.active]="selectedBibleAnswer === '1'"
+        (click)="selectBibleAnswer('1')">I never or seldom read the bible.</mat-card>
+      <mat-card fxFlex matRipple class="answer-card" [class.active]="selectedBibleAnswer === '2'"
+        (click)="selectBibleAnswer('2')">I want to read the Bible but don't have a plan.</mat-card>
+      <mat-card fxFlex matRipple class="answer-card" [class.active]="selectedBibleAnswer === '3'"
+        (click)="selectBibleAnswer('3')">I am digging deeper into the Bible and am in an individual or group Bible
+        Study.</mat-card>
+      <mat-card fxFlex matRipple class="answer-card" [class.active]="selectedBibleAnswer === '4'"
+        (click)="selectBibleAnswer('4')">Reading and studying the Bible is a major priority in my life. God's Word
+        directs my daily
+        decisions.
+      </mat-card>
+    </div>
+    <div fxFlex></div>
+    <div class="stepper-buttons" fxLayoutAlign="end center">
+      <button mat-button matStepperNext [disabled]="!selectedBibleAnswer">Next</button>
+    </div>
+  </mat-step>
+  <mat-step>
+    <ng-template matStepLabel>Prayer</ng-template>
+    <h2 class="stepper-title">How would you best describe your prayer habits?</h2>
+    <div class="card-row" fxLayout="row" fxLayoutGap="16px" fxLayout.lt-sm="column">
+      <mat-card fxFlex matRipple class="answer-card" [class.active]="selectedPrayerAnswer === '1'"
+        (click)="selectPrayerAnswer('1')">I never or seldom pray.</mat-card>
+      <mat-card fxFlex matRipple class="answer-card" [class.active]="selectedPrayerAnswer === '2'"
+        (click)="selectPrayerAnswer('2')">I want to Pray more but I am unsure how to.</mat-card>
+      <mat-card fxFlex matRipple class="answer-card" [class.active]="selectedPrayerAnswer === '3'"
+        (click)="selectPrayerAnswer('3')">I set aside intentional time to pray daily.</mat-card>
+      <mat-card fxFlex matRipple class="answer-card" [class.active]="selectedPrayerAnswer === '4'"
+        (click)="selectPrayerAnswer('4')">Praying is a major priority in my life. Praying impacts my decisions and well
+        being.
+      </mat-card>
+    </div>
+    <div class="stepper-buttons" fxLayoutAlign="space-between">
+      <button mat-button matStepperPrevious>Back</button>
+      <button mat-button matStepperNext [disabled]="!selectedPrayerAnswer">Next</button>
+    </div>
+  </mat-step>
+  <mat-step>
+    <ng-template matStepLabel>Service</ng-template>
+    <h2 class="stepper-title">How would you best describe your serving habits?</h2>
+    <div class="card-row" fxLayout="row" fxLayoutGap="16px" fxLayout.lt-sm="column">
+      <mat-card fxFlex matRipple class="answer-card" [class.active]="selectedServiceAnswer === '1'"
+        (click)="selectServiceAnswer('1')">I never or seldom volunteer at the church. I haven't recognized the need to
+        do so.</mat-card>
+      <mat-card fxFlex matRipple class="answer-card" [class.active]="selectedServiceAnswer === '2'"
+        (click)="selectServiceAnswer('2')">I want to volunteer more at the church but I haven't explored the
+        opportunities to get involved
+        consistently.</mat-card>
+      <mat-card fxFlex matRipple class="answer-card" [class.active]="selectedServiceAnswer === '3'"
+        (click)="selectServiceAnswer('3')">I have started to volunteer at the church on a regular basis.</mat-card>
+      <mat-card fxFlex matRipple class="answer-card" [class.active]="selectedServiceAnswer === '4'"
+        (click)="selectServiceAnswer('4')">Volunteering at the church is a regular part of my schedule and has
+        dramatically impacted my
+        relationship with Christ.
+      </mat-card>
+    </div>
+    <div class="stepper-buttons" fxLayoutAlign="space-between">
+      <button mat-button matStepperPrevious>Back</button>
+      <button mat-button matStepperNext [disabled]="!selectedServiceAnswer">Next</button>
+    </div>
+  </mat-step>
+  <mat-step>
+    <ng-template matStepLabel>Giving</ng-template>
+    <h2 class="stepper-title">How would you best describe your giving habits?</h2>
+    <div class="card-row" fxLayout="row" fxLayoutGap="16px" fxLayout.lt-sm="column">
+      <mat-card fxFlex matRipple class="answer-card" [class.active]="selectedGivingAnswer === '1'"
+        (click)="selectGivingAnswer('1')">I never or seldom give to the church.</mat-card>
+      <mat-card fxFlex matRipple class="answer-card" [class.active]="selectedGivingAnswer === '2'"
+        (click)="selectGivingAnswer('2')">I want to give more but I don't have a plan.</mat-card>
+      <mat-card fxFlex matRipple class="answer-card" [class.active]="selectedGivingAnswer === '3'"
+        (click)="selectGivingAnswer('3')">I started to give consistently and give a percentage of my income to the
+        church.</mat-card>
+      <mat-card fxFlex matRipple class="answer-card" [class.active]="selectedGivingAnswer === '4'"
+        (click)="selectGivingAnswer('4')">Giving a percentage of my income to the church is my first financial priority.
+        I view giving as
+        an opportunity to honor Christ.
+      </mat-card>
+    </div>
+    <div class="stepper-buttons" fxLayoutAlign="space-between">
+      <button mat-button matStepperPrevious>Back</button>
+      <button mat-button matStepperNext [disabled]="!selectedGivingAnswer">Next</button>
+    </div>
+  </mat-step>
+  <mat-step>
+    <ng-template matStepLabel>Evangelism</ng-template>
+    <h2 class="stepper-title">How would you best describe your evangelism habits?</h2>
+    <div class="card-row" fxLayout="row" fxLayoutGap="16px" fxLayout.lt-sm="column">
+      <mat-card fxFlex matRipple class="answer-card" [class.active]="selectedPrayerAnswer === '1'"
+        (click)="selectPrayerAnswer('1')">I never or seldom have invited people to church. I don't want to force my
+        beliefs on anyone.
+      </mat-card>
+      <mat-card fxFlex matRipple class="answer-card" [class.active]="selectedEvangelismAnswer === '2'"
+        (click)="selectEvangelismAnswer('2')">I want to invite people to church but am afraid or don't know how.
+      </mat-card>
+      <mat-card fxFlex matRipple class="answer-card" [class.active]="selectedEvangelismAnswer === '3'"
+        (click)="selectEvangelismAnswer('3')">I regularly look for opportunities to invite others to church.</mat-card>
+      <mat-card fxFlex matRipple class="answer-card" [class.active]="selectedEvangelismAnswer === '4'"
+        (click)="selectEvangelismAnswer('4')">I consistently invite people to church because I recognize that inviting
+        people to a relationship
+        with Christ is the most important thing I can do.
+      </mat-card>
+    </div>
+    <div class="stepper-buttons" fxLayoutAlign="space-between">
+      <button mat-button matStepperPrevious>Back</button>
+      <button mat-button (click)="completeAssessment()"
+        [disabled]="!selectedEvangelismAnswer">Complete</button>
+    </div>
+  </mat-step>
+</mat-horizontal-stepper>
+
+<div *ngIf="!isAssessmentStarted" fxLayout="column" fxLayoutAlign="center center" style="height: calc(100vh - 64px);">
+  <div style="max-width:600px;">
+    <h2>
+      The following assessment will gauge your spiritual walk and help us direct you to the appropriate resources.
+      Click the button below to start the assessment.
+    </h2>
+    <h3 style="margin-top: 16px;">
+      Reminder: Be honest with yourself throughout the assessment. No one will see your answers and being dishonest will
+      only hinder YOUR spiritual walk.
+    </h3>
+    <div style="text-align: center;">
+      <button mat-raised-button color="primary" style="margin: 16px auto" (click)="startAssessment()">Start
+        Assessment</button>
+    </div>
+  </div>
+</div>

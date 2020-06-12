@@ -1,0 +1,19 @@
+@import '~@pxblue/colors/palette.scss';
+
+.active {
+  background-color: map-get($pxb-white, 400);
+}
+
+.stepper-title {
+  text-align: center;
+  margin: 16px auto;
+}
+
+.answer-card {
+  cursor: pointer;
+  user-select: none;
+}
+
+.stepper-buttons {
+  margin-top: 16px;
+}
