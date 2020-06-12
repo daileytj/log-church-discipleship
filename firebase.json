@@ -1,0 +1,19 @@
+{
+  "hosting": [
+    {
+      "target": "log-church-discipleship",
+      "public": "dist/log-church-discipleship",
+      "ignore": [
+        "firebase.json",
+        "**/.*",
+        "**/node_modules/**"
+      ],
+      "rewrites": [
+        {
+          "source": "**",
+          "destination": "/index.html"
+        }
+      ]
+    }
+  ]
+}

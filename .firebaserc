@@ -1,0 +1,11 @@
+{
+  "targets": {
+    "log-church-discipleship": {
+      "hosting": {
+        "log-church-discipleship": [
+          "log-church-discipleship"
+        ]
+      }
+    }
+  }
+}
