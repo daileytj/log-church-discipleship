@@ -26,6 +26,12 @@
   margin: 0 auto;
 }
 
+@media only screen and (max-width: 800px) {
+  ::ng-deep .pxb-blue .mat-step-header .mat-step-label {
+    display: none !important;
+  }
+}
+
 @media only screen and (max-width:600px) {
   .main-content-wrapper {
     height: auto;

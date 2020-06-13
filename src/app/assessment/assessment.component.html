@@ -1,7 +1,7 @@
 <mat-toolbar color="primary" style="position: sticky"><img
     src="https://thechurchco-production.s3.amazonaws.com/uploads/sites/2207/2020/04/d05e33bb-af40-43d4-9868-b372a4733dcc@2x-1.png"
     style="height:56px;"><span style="margin-left: 32px;">Spiritual Assessment</span></mat-toolbar>
-<mat-horizontal-stepper #stepper *ngIf="isAssessmentStarted">
+<mat-horizontal-stepper #stepper *ngIf="isAssessmentStarted" [linear]=true>
   <mat-step>
     <ng-template matStepLabel>Bible Study</ng-template>
     <h2 class="stepper-title">How would you best describe your Bible study habits?</h2>
