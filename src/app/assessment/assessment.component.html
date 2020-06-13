@@ -1,4 +1,4 @@
-<mat-toolbar color="primary"><img
+<mat-toolbar color="primary" style="position: sticky"><img
     src="https://thechurchco-production.s3.amazonaws.com/uploads/sites/2207/2020/04/d05e33bb-af40-43d4-9868-b372a4733dcc@2x-1.png"
     style="height:56px;"><span style="margin-left: 32px;">Spiritual Assessment</span></mat-toolbar>
 <mat-horizontal-stepper #stepper *ngIf="isAssessmentStarted">
@@ -117,7 +117,7 @@
   </mat-step>
 </mat-horizontal-stepper>
 
-<div *ngIf="!isAssessmentStarted" fxLayout="column" fxLayoutAlign="center center" style="height: calc(100vh - 64px);">
+<div *ngIf="!isAssessmentStarted" fxLayout="column" fxLayoutAlign="center center" class="main-content-wrapper">
   <div style="max-width:600px;">
     <h2>
       The following assessment will gauge your spiritual walk and help us direct you to the appropriate resources.
