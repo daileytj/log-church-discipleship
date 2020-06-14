@@ -1,0 +1,32 @@
+@import '~@pxblue/colors/palette.scss';
+
+::ng-deep .mat-drawer-inner-container {
+  width: 300px !important;
+}
+
+::ng-deep .pxb-drawer-header {
+  background-color: map-get($pxb-blue, 500) !important;
+  color: map-get($pxb-white, 50) !important;
+}
+
+::ng-deep .pxb-drawer-footer {
+  background-color: map-get($pxb-blue, 500);
+}
+
+::ng-deep .pxb-drawer-nav-item {
+  cursor: pointer !important;
+}
+
+::ng-deep .pxb-drawer {
+  border-right: none !important;
+}
+
+.footer-image {
+  box-sizing: border-box;
+  width: 88px;
+  margin: 8px;
+}
+
+::ng-deep .mat-button-focus-overlay {
+  background-color: transparent!important;
+}

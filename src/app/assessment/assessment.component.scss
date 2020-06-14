@@ -26,6 +26,10 @@
   margin: 0 auto;
 }
 
+::ng-deep .mat-stepper-horizontal {
+  height: calc(100vh - 64px) !important;
+}
+
 @media only screen and (max-width: 800px) {
   ::ng-deep .pxb-blue .mat-step-header .mat-step-label {
     display: none !important;

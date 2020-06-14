@@ -24,8 +24,8 @@
     "@angular/platform-browser": "~9.0.7",
     "@angular/platform-browser-dynamic": "~9.0.7",
     "@angular/router": "~9.0.7",
-    "@pxblue/angular-components": "^2.0.0-beta.7",
-    "@pxblue/angular-themes": "^4.0.0",
+    "@pxblue/angular-components": "^2.0.0-beta.8",
+    "@pxblue/angular-themes": "^5.0.0-beta.8",
     "rxjs": "~6.5.4",
     "tslib": "^1.10.0",
     "zone.js": "~0.10.2"

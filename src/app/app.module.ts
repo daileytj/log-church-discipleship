@@ -11,8 +11,9 @@ import { MatCardModule } from '@angular/material/card';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { MatStepperModule } from '@angular/material/stepper';
 import { MatRippleModule } from '@angular/material/core';
-import { SpacerModule } from '@pxblue/angular-components';
+import { SpacerModule, DrawerModule } from '@pxblue/angular-components';
 import { CompletedAssessmentComponent } from './completed-assessment/completed-assessment.component'; 
+import { MatIconModule } from '@angular/material/icon';
 
 @NgModule({
   declarations: [
@@ -30,7 +31,9 @@ import { CompletedAssessmentComponent } from './completed-assessment/completed-a
     FlexLayoutModule,
     MatStepperModule,
     MatRippleModule,
-    SpacerModule
+    SpacerModule,
+    DrawerModule,
+    MatIconModule
   ],
   providers: [],
   bootstrap: [AppComponent]

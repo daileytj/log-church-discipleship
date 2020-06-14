@@ -1,1 +1,49 @@
-<router-outlet></router-outlet>
+<pxb-drawer-layout variant="temporary" width="300" (backdropClick)="closeDrawer()">
+  <pxb-drawer pxb-drawer [open]="drawerOpen">
+    <pxb-drawer-header title="The Log Church">
+      <button pxb-icon mat-icon-button (click)="closeDrawer()">
+        <mat-icon>menu</mat-icon>
+      </button>
+    </pxb-drawer-header>
+    <pxb-drawer-body>
+      <pxb-drawer-nav-item hidePadding=true title="Assessment" [selected]="selectedItemId === 'Assessment'"
+      (select)="setActive('Assessment'); navigate('Assessment'); closeDrawer();">
+      </pxb-drawer-nav-item>
+      <pxb-drawer-nav-item hidePadding=true title="Assessment Results" [selected]="selectedItemId === 'Assessment Results'"
+      (select)="setActive('Assessment Results'); navigate('Assessment Results'); closeDrawer();">
+      </pxb-drawer-nav-item>
+      <pxb-drawer-nav-item hidePadding=true [title]="bibleStudyGuideLinks[0].title">
+        <pxb-drawer-nav-item *ngFor="let item of bibleStudyGuideLinks[0].items" [title]="item.title" [selected]="selectedItemId === item.title"
+        (select)="setActive(item.title); navigate(item.title); closeDrawer();">
+        </pxb-drawer-nav-item>
+      </pxb-drawer-nav-item>
+      <pxb-drawer-nav-item hidePadding=true [title]="prayerGuideLinks[0].title">
+        <pxb-drawer-nav-item *ngFor="let item of prayerGuideLinks[0].items" [title]="item.title" [selected]="selectedItemId === item.title"
+        (select)="setActive(item.title); navigate(item.title); closeDrawer();">
+        </pxb-drawer-nav-item>
+      </pxb-drawer-nav-item>
+      <pxb-drawer-nav-item hidePadding=true [title]="serviceGuideLinks[0].title">
+        <pxb-drawer-nav-item *ngFor="let item of serviceGuideLinks[0].items" [title]="item.title" [selected]="selectedItemId === item.title"
+        (select)="setActive(item.title); navigate(item.title); closeDrawer();">
+        </pxb-drawer-nav-item>
+      </pxb-drawer-nav-item>
+      <pxb-drawer-nav-item hidePadding=true [title]="givingGuideLinks[0].title">
+        <pxb-drawer-nav-item *ngFor="let item of givingGuideLinks[0].items" [title]="item.title" [selected]="selectedItemId === item.title"
+        (select)="setActive(item.title); navigate(item.title); closeDrawer();">
+        </pxb-drawer-nav-item>
+      </pxb-drawer-nav-item>
+      <pxb-drawer-nav-item hidePadding=true [title]="evangelismGuideLinks[0].title">
+        <pxb-drawer-nav-item *ngFor="let item of evangelismGuideLinks[0].items" [title]="item.title" [selected]="selectedItemId === item.title"
+        (select)="setActive(item.title); navigate(item.title); closeDrawer();">
+        </pxb-drawer-nav-item>
+      </pxb-drawer-nav-item>
+
+    </pxb-drawer-body>
+    <pxb-drawer-footer><img class="footer-image"
+        src="https://thechurchco-production.s3.amazonaws.com/uploads/sites/2207/2020/04/d05e33bb-af40-43d4-9868-b372a4733dcc@2x-1.png">
+    </pxb-drawer-footer>
+  </pxb-drawer>
+  <div pxb-content>
+    <router-outlet></router-outlet>
+  </div>
+</pxb-drawer-layout>

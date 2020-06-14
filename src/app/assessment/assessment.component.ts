@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ChangeDetectorRef } from '@angular/core';
 import { Router } from '@angular/router';
+import { DrawerService } from '../drawer.service';
 
 export interface Assessment {
   bibleStudyLevel: number;
@@ -15,6 +16,7 @@ export interface Assessment {
   styleUrls: ['./assessment.component.scss']
 })
 export class AssessmentComponent implements OnInit {
+  drawerOpen: boolean;
   isAssessmentStarted = false;
   selectedBibleAnswer: string;
   selectedPrayerAnswer: string;
@@ -29,7 +31,7 @@ export class AssessmentComponent implements OnInit {
     evangelismLevel: null
   }
 
-  constructor(public router: Router) { }
+  constructor(public router: Router, public drawerService: DrawerService, public changeDetectorService: ChangeDetectorRef) { }
 
   ngOnInit(): void {
     if (localStorage.getItem('bibleStudyLevel')) {
@@ -57,9 +59,15 @@ export class AssessmentComponent implements OnInit {
       this.assessment.evangelismLevel = +this.selectEvangelismAnswer;
     };
 
-    if(this.selectedBibleAnswer && this.selectedPrayerAnswer && this.selectedServiceAnswer && this.selectedGivingAnswer && this.selectedEvangelismAnswer) {
+    if (this.selectedBibleAnswer && this.selectedPrayerAnswer && this.selectedServiceAnswer && this.selectedGivingAnswer && this.selectedEvangelismAnswer) {
       this.completeAssessment();
     }
+
+    this.drawerOpen = this.drawerService.getDrawerOpen();
+    this.drawerService.drawerOpenChanges().subscribe((res: boolean) => {
+      this.drawerOpen = res;
+      this.changeDetectorService.detectChanges();
+    });
   }
 
   startAssessment() {
@@ -68,36 +76,40 @@ export class AssessmentComponent implements OnInit {
 
   selectBibleAnswer(id: string) {
     this.selectedBibleAnswer = id;
-    this.assessment = {...this.assessment, bibleStudyLevel: +id}
+    this.assessment = { ...this.assessment, bibleStudyLevel: +id }
     localStorage.setItem('bibleStudyLevel', this.assessment.bibleStudyLevel.toString())
   }
 
   selectPrayerAnswer(id: string) {
     this.selectedPrayerAnswer = id;
-    this.assessment = {...this.assessment, prayerLevel: +id}
+    this.assessment = { ...this.assessment, prayerLevel: +id }
     localStorage.setItem('prayerLevel', this.assessment.prayerLevel.toString())
   }
 
   selectServiceAnswer(id: string) {
     this.selectedServiceAnswer = id;
-    this.assessment = {...this.assessment, serviceLevel: +id}
+    this.assessment = { ...this.assessment, serviceLevel: +id }
     localStorage.setItem('serviceLevel', this.assessment.serviceLevel.toString())
   }
 
   selectGivingAnswer(id: string) {
     this.selectedGivingAnswer = id;
-    this.assessment = {...this.assessment, givingLevel: +id}
+    this.assessment = { ...this.assessment, givingLevel: +id }
     localStorage.setItem('givingLevel', this.assessment.givingLevel.toString())
   }
 
   selectEvangelismAnswer(id: string) {
     this.selectedEvangelismAnswer = id;
-    this.assessment = {...this.assessment, evangelismLevel: +id}
+    this.assessment = { ...this.assessment, evangelismLevel: +id }
     localStorage.setItem('evangelismLevel', this.assessment.evangelismLevel.toString())
   }
 
   completeAssessment() {
     this.router.navigate(['/completed-assessment']);
+  }
+
+  openDrawer() {
+    this.drawerService.setDrawerOpen(true);
   }
 
 }
