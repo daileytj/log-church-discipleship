@@ -10,6 +10,7 @@ import { DrawerService } from '../drawer.service';
 })
 export class CompletedAssessmentComponent implements OnInit {
   drawerOpen: boolean;
+  isAssessmentComplete: boolean;
   assessment: Assessment = {
     bibleStudyLevel: null,
     prayerLevel: null,
@@ -40,6 +41,12 @@ export class CompletedAssessmentComponent implements OnInit {
     if (localStorage.getItem('evangelismLevel')) {
       this.assessment.evangelismLevel = +localStorage.getItem('evangelismLevel');
     };
+
+    if(!this.assessment.bibleStudyLevel || !this.assessment.prayerLevel || !this.assessment.serviceLevel || !this.assessment.givingLevel || !this.assessment.evangelismLevel) {
+      this.isAssessmentComplete = false;
+    } else {
+      this.isAssessmentComplete = true;
+    }
 
     this.drawerOpen = this.drawerService.getDrawerOpen();
     this.drawerService.drawerOpenChanges().subscribe((res: boolean) => {

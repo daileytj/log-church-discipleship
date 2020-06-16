@@ -3,7 +3,7 @@
     <mat-icon>menu</mat-icon>
   </button>Assessment Results</mat-toolbar>
 
-<div fxLayout="column" class="main-content-wrapper" fxLayoutAlign="center center">
+<div fxLayout="column" *ngIf="isAssessmentComplete" class="main-content-wrapper" fxLayoutAlign="center center">
   <h2 style="text-align: center; margin: 16px auto;">Based on the results of your assessment we recommend you look at
     the following resources:</h2>
   <div class="guide-container">
@@ -41,4 +41,9 @@
   <h3 style="text-align: center; margin: 16px auto;">If you have gone through all of our guides or feel that your
     spiritual walk has shifted feel free to retake the assessment.</h3>
   <button mat-raised-button color="primary" (click)="retakeAssessment()">Re-take Assessment</button>
+</div>
+
+<div fxLayout="column" *ngIf="!isAssessmentComplete" class="main-content-wrapper" fxLayoutAlign="center center">
+  <h3 style="text-align: center; margin: 16px auto;">Oops! Looks like you haven't completed an assessment yet. Click the button below to take the assessment.</h3>
+  <button mat-raised-button color="primary" (click)="retakeAssessment()">Take Assessment</button>
 </div>

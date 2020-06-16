@@ -9,9 +9,6 @@
       <pxb-drawer-nav-item hidePadding=true title="Assessment" [selected]="selectedItemId === 'Assessment'"
       (select)="setActive('Assessment'); navigate('Assessment'); closeDrawer();">
       </pxb-drawer-nav-item>
-      <pxb-drawer-nav-item hidePadding=true title="Assessment Results" [selected]="selectedItemId === 'Assessment Results'"
-      (select)="setActive('Assessment Results'); navigate('Assessment Results'); closeDrawer();">
-      </pxb-drawer-nav-item>
       <pxb-drawer-nav-item hidePadding=true [title]="bibleStudyGuideLinks[0].title">
         <pxb-drawer-nav-item *ngFor="let item of bibleStudyGuideLinks[0].items" [title]="item.title" [selected]="selectedItemId === item.title"
         (select)="setActive(item.title); navigate(item.title); closeDrawer();">

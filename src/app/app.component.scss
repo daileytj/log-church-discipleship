@@ -1,4 +1,7 @@
 @import '~@pxblue/colors/palette.scss';
+* {
+  user-select: none;
+}
 
 ::ng-deep .mat-drawer-inner-container {
   width: 300px !important;
