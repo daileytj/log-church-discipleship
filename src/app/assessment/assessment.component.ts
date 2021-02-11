@@ -7,7 +7,7 @@ export interface Assessment {
   prayerLevel: number;
   serviceLevel: number;
   givingLevel: number;
-  evangelismLevel: number;
+  invitingLevel: number;
 }
 
 @Component({
@@ -22,13 +22,13 @@ export class AssessmentComponent implements OnInit {
   selectedPrayerAnswer: string;
   selectedServiceAnswer: string;
   selectedGivingAnswer: string;
-  selectedEvangelismAnswer: string;
+  selectedInvitingAnswer: string;
   assessment: Assessment = {
     bibleStudyLevel: null,
     prayerLevel: null,
     serviceLevel: null,
     givingLevel: null,
-    evangelismLevel: null
+    invitingLevel: null
   }
 
   constructor(public router: Router, public drawerService: DrawerService, public changeDetectorService: ChangeDetectorRef) { }
@@ -54,12 +54,12 @@ export class AssessmentComponent implements OnInit {
       this.assessment.givingLevel = +this.selectGivingAnswer;
     };
 
-    if (localStorage.getItem('evangelismLevel')) {
-      this.selectedEvangelismAnswer = localStorage.getItem('evangelismLevel');
-      this.assessment.evangelismLevel = +this.selectEvangelismAnswer;
+    if (localStorage.getItem('invitingLevel')) {
+      this.selectedInvitingAnswer = localStorage.getItem('invitingLevel');
+      this.assessment.invitingLevel = +this.selectInvitingAnswer;
     };
 
-    if (this.selectedBibleAnswer && this.selectedPrayerAnswer && this.selectedServiceAnswer && this.selectedGivingAnswer && this.selectedEvangelismAnswer) {
+    if (this.selectedBibleAnswer && this.selectedPrayerAnswer && this.selectedServiceAnswer && this.selectedGivingAnswer && this.selectedInvitingAnswer) {
       this.completeAssessment();
     }
 
@@ -98,10 +98,10 @@ export class AssessmentComponent implements OnInit {
     localStorage.setItem('givingLevel', this.assessment.givingLevel.toString())
   }
 
-  selectEvangelismAnswer(id: string) {
-    this.selectedEvangelismAnswer = id;
-    this.assessment = { ...this.assessment, evangelismLevel: +id }
-    localStorage.setItem('evangelismLevel', this.assessment.evangelismLevel.toString())
+  selectInvitingAnswer(id: string) {
+    this.selectedInvitingAnswer = id;
+    this.assessment = { ...this.assessment, invitingLevel: +id }
+    localStorage.setItem('invitingLevel', this.assessment.invitingLevel.toString())
   }
 
   completeAssessment() {

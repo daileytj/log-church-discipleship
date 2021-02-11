@@ -14,12 +14,24 @@ import { MatRippleModule } from '@angular/material/core';
 import { SpacerModule, DrawerModule } from '@pxblue/angular-components';
 import { CompletedAssessmentComponent } from './completed-assessment/completed-assessment.component'; 
 import { MatIconModule } from '@angular/material/icon';
+import { BiblePathGuideComponent } from './bible-path-guide/bible-path-guide.component';
+import { PrayerPathGuideComponent } from './prayer-path-guide/prayer-path-guide.component';
+import { ServicePathGuideComponent } from './service-path-guide/service-path-guide.component';
+import { GivingPathGuideComponent } from './giving-path-guide/giving-path-guide.component';
+import { InvitingPathGuideComponent } from './inviting-path-guide/inviting-path-guide.component';
+import { DiscipleshipPathOverviewComponent } from './discipleship-path-overview/discipleship-path-overview.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     AssessmentComponent,
-    CompletedAssessmentComponent
+    CompletedAssessmentComponent,
+    BiblePathGuideComponent,
+    PrayerPathGuideComponent,
+    ServicePathGuideComponent,
+    GivingPathGuideComponent,
+    InvitingPathGuideComponent,
+    DiscipleshipPathOverviewComponent
   ],
   imports: [
     BrowserModule,

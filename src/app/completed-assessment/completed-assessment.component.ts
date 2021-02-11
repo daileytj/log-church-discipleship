@@ -16,7 +16,7 @@ export class CompletedAssessmentComponent implements OnInit {
     prayerLevel: null,
     serviceLevel: null,
     givingLevel: null,
-    evangelismLevel: null
+    invitingLevel: null
   }
 
   constructor(public router: Router, public drawerService: DrawerService, public changeDetectorService: ChangeDetectorRef) { }
@@ -38,11 +38,11 @@ export class CompletedAssessmentComponent implements OnInit {
       this.assessment.givingLevel = +localStorage.getItem('givingLevel');
     };
 
-    if (localStorage.getItem('evangelismLevel')) {
-      this.assessment.evangelismLevel = +localStorage.getItem('evangelismLevel');
+    if (localStorage.getItem('invitingLevel')) {
+      this.assessment.invitingLevel = +localStorage.getItem('invitingLevel');
     };
 
-    if(!this.assessment.bibleStudyLevel || !this.assessment.prayerLevel || !this.assessment.serviceLevel || !this.assessment.givingLevel || !this.assessment.evangelismLevel) {
+    if(!this.assessment.bibleStudyLevel || !this.assessment.prayerLevel || !this.assessment.serviceLevel || !this.assessment.givingLevel || !this.assessment.invitingLevel) {
       this.isAssessmentComplete = false;
     } else {
       this.isAssessmentComplete = true;

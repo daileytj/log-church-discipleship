@@ -6,33 +6,26 @@
       </button>
     </pxb-drawer-header>
     <pxb-drawer-body>
-      <pxb-drawer-nav-item hidePadding=true title="Assessment" [selected]="selectedItemId === 'Assessment'"
-      (select)="setActive('Assessment'); navigate('Assessment'); closeDrawer();">
+      <pxb-drawer-nav-item hidePadding=true title="Discipleship Path Overview" [selected]="selectedItemId === 'overview'"
+      (select)="setActive('overview'); navigate('overview'); closeDrawer();">
       </pxb-drawer-nav-item>
-      <pxb-drawer-nav-item hidePadding=true [title]="bibleStudyGuideLinks[0].title">
-        <pxb-drawer-nav-item *ngFor="let item of bibleStudyGuideLinks[0].items" [title]="item.title" [selected]="selectedItemId === item.title"
-        (select)="setActive(item.title); navigate(item.title); closeDrawer();">
-        </pxb-drawer-nav-item>
+      <pxb-drawer-nav-item hidePadding=true title="Assessment" [selected]="selectedItemId === 'assessment'"
+      (select)="setActive('assessment'); navigate('assessment'); closeDrawer();">
       </pxb-drawer-nav-item>
-      <pxb-drawer-nav-item hidePadding=true [title]="prayerGuideLinks[0].title">
-        <pxb-drawer-nav-item *ngFor="let item of prayerGuideLinks[0].items" [title]="item.title" [selected]="selectedItemId === item.title"
-        (select)="setActive(item.title); navigate(item.title); closeDrawer();">
-        </pxb-drawer-nav-item>
+      <pxb-drawer-nav-item hidePadding=true title="Bible Path Guide" [selected]="selectedItemId === 'bible-path-guide'"
+      (select)="setActive('bible-path-guide'); navigate('bible-path-guide'); closeDrawer();">
       </pxb-drawer-nav-item>
-      <pxb-drawer-nav-item hidePadding=true [title]="serviceGuideLinks[0].title">
-        <pxb-drawer-nav-item *ngFor="let item of serviceGuideLinks[0].items" [title]="item.title" [selected]="selectedItemId === item.title"
-        (select)="setActive(item.title); navigate(item.title); closeDrawer();">
-        </pxb-drawer-nav-item>
+      <pxb-drawer-nav-item hidePadding=true title="Prayer Path Guide" [selected]="selectedItemId === 'prayer-path-guide'"
+      (select)="setActive('prayer-path-guide'); navigate('prayer-path-guide'); closeDrawer();">
       </pxb-drawer-nav-item>
-      <pxb-drawer-nav-item hidePadding=true [title]="givingGuideLinks[0].title">
-        <pxb-drawer-nav-item *ngFor="let item of givingGuideLinks[0].items" [title]="item.title" [selected]="selectedItemId === item.title"
-        (select)="setActive(item.title); navigate(item.title); closeDrawer();">
-        </pxb-drawer-nav-item>
+      <pxb-drawer-nav-item hidePadding=true title="Service Path Guide" [selected]="selectedItemId === 'service-path-guide'"
+      (select)="setActive('service-path-guide'); navigate('service-path-guide'); closeDrawer();">
       </pxb-drawer-nav-item>
-      <pxb-drawer-nav-item hidePadding=true [title]="evangelismGuideLinks[0].title">
-        <pxb-drawer-nav-item *ngFor="let item of evangelismGuideLinks[0].items" [title]="item.title" [selected]="selectedItemId === item.title"
-        (select)="setActive(item.title); navigate(item.title); closeDrawer();">
-        </pxb-drawer-nav-item>
+      <pxb-drawer-nav-item hidePadding=true title="Giving Path Guide" [selected]="selectedItemId === 'giving-path-guide'"
+      (select)="setActive('giving-path-guide'); navigate('giving-path-guide'); closeDrawer();">
+      </pxb-drawer-nav-item>
+      <pxb-drawer-nav-item hidePadding=true title="Inviting Path Guide" [selected]="selectedItemId === 'inviting-path-guide'"
+      (select)="setActive('inviting-path-guide'); navigate('inviting-path-guide'); closeDrawer();">
       </pxb-drawer-nav-item>
 
     </pxb-drawer-body>

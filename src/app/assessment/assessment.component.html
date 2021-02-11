@@ -1,7 +1,8 @@
 <mat-toolbar color="primary" style="position: sticky">
   <button *ngIf="!drawerOpen" mat-icon-button (click)="openDrawer()" style="margin-right:16px;">
     <mat-icon>menu</mat-icon>
-  </button>Spiritual Assessment</mat-toolbar>
+  </button>Discipleship Path
+</mat-toolbar>
 <mat-horizontal-stepper #stepper *ngIf="isAssessmentStarted" [linear]=true>
   <mat-step>
     <ng-template matStepLabel>Bible Study</ng-template>
@@ -92,41 +93,49 @@
     </div>
   </mat-step>
   <mat-step>
-    <ng-template matStepLabel>Evangelism</ng-template>
-    <h2 class="stepper-title">How would you best describe your evangelism habits?</h2>
+    <ng-template matStepLabel>Inviting</ng-template>
+    <h2 class="stepper-title">How would you best describe your inviting habits?</h2>
     <div class="card-row" fxLayout="row" fxLayoutGap="16px" fxLayout.lt-sm="column">
-      <mat-card fxFlex matRipple class="answer-card" [class.active]="selectedPrayerAnswer === '1'"
-        (click)="selectPrayerAnswer('1')">I never or seldom have invited people to church. I don't want to force my
+      <mat-card fxFlex matRipple class="answer-card" [class.active]="selectedInvitingAnswer === '1'"
+        (click)="selectInvitingAnswer('1')">I never or seldom have invited people to church. I don't want to force my
         beliefs on anyone.
       </mat-card>
-      <mat-card fxFlex matRipple class="answer-card" [class.active]="selectedEvangelismAnswer === '2'"
-        (click)="selectEvangelismAnswer('2')">I want to invite people to church but am afraid or don't know how.
+      <mat-card fxFlex matRipple class="answer-card" [class.active]="selectedInvitingAnswer === '2'"
+        (click)="selectInvitingAnswer('2')">I want to invite people to church but am afraid or don't know how.
       </mat-card>
-      <mat-card fxFlex matRipple class="answer-card" [class.active]="selectedEvangelismAnswer === '3'"
-        (click)="selectEvangelismAnswer('3')">I regularly look for opportunities to invite others to church.</mat-card>
-      <mat-card fxFlex matRipple class="answer-card" [class.active]="selectedEvangelismAnswer === '4'"
-        (click)="selectEvangelismAnswer('4')">I consistently invite people to church because I recognize that inviting
+      <mat-card fxFlex matRipple class="answer-card" [class.active]="selectedInvitingAnswer === '3'"
+        (click)="selectInvitingAnswer('3')">I regularly look for opportunities to invite others to church.</mat-card>
+      <mat-card fxFlex matRipple class="answer-card" [class.active]="selectedInvitingAnswer === '4'"
+        (click)="selectInvitingAnswer('4')">I consistently invite people to church because I recognize that inviting
         people to a relationship
         with Christ is the most important thing I can do.
       </mat-card>
     </div>
     <div class="stepper-buttons" fxLayoutAlign="space-between">
       <button mat-button matStepperPrevious>Back</button>
-      <button mat-button (click)="completeAssessment()" [disabled]="!selectedEvangelismAnswer">Complete</button>
+      <button mat-button (click)="completeAssessment()" [disabled]="!selectedInvitingAnswer">Complete</button>
     </div>
   </mat-step>
 </mat-horizontal-stepper>
 
 <div *ngIf="!isAssessmentStarted" fxLayout="column" fxLayoutAlign="center center" class="main-content-wrapper">
-  <div style="max-width:600px;">
+  <div style="max-width:400px;">
     <h2>
-      The following assessment will gauge your spiritual walk and help us direct you to the appropriate resources.
-      Click the button below to start the assessment.
+      Discipleship Path Self-Assessment
     </h2>
-    <h3 style="margin-top: 16px;">
-      Reminder: Be honest with yourself throughout the assessment. No one will see your answers and being dishonest will
-      only hinder YOUR spiritual walk.
-    </h3>
+    <p style="margin-top: 16px;">
+      The following self assessment will;
+      <br />
+      1) Gauge where you are on the Discipleship path.
+      <br />
+      2) Help with resources for your next steps.
+    </p>
+    <p style="margin-top: 16px;">
+      Reminder: Be honest with your responses so as to benefit your journey. No one will see your answers.
+    </p>
+    <p style="margin-top: 16px">
+      Click the button below to start the self-assessment.
+    </p>
     <div style="text-align: center;">
       <button mat-raised-button color="primary" style="margin: 16px auto" (click)="startAssessment()">Start
         Assessment</button>
