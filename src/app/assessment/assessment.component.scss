@@ -1,7 +1,8 @@
 @import '~@pxblue/colors/palette.scss';
 
 .active {
-  background-color: map-get($pxb-white, 700);
+  background-color: map-get($pxb-blue, 500);
+  color: map-get($pxb-white, 50)
 }
 
 .stepper-title {

@@ -1,5 +1,39 @@
-<mat-toolbar color="primary" style="position: sticky">
+<mat-toolbar color="primary" class="toolbar">
   <button *ngIf="!drawerOpen" mat-icon-button (click)="openDrawer()" style="margin-right:16px;">
     <mat-icon>menu</mat-icon>
   </button>Discipleship Path Overview
 </mat-toolbar>
+
+<div class="main-content-wrapper" fxLayout="column" fxLayoutAlign="center center">
+  <div class="content-wrapper">
+    <img src="assets/DiscipleshipPath.png" class="main-image" />
+    <div class="segment-definitions">
+      <h2>4 Segments Defined</h2>
+      <p><strong>Exploring Christ</strong>: The people in this segment are unsure about Christ and His role in their
+        lives.</p>
+      <p><strong>Growing In Christ</strong>: The people in this segment have a personal relationship with Christ.
+        They've made a commitment to trust Him with their souls' salvation and for eternity, but they are just beginning
+        to learn what it means and what it takes to develop a relationship with Him.</p>
+      <p><strong>Close To Christ</strong>: The people in this segment see Christ as someone who assists them in life. On
+        a regular basis they depend on Him for help and guidance for the issues they face.</p>
+      <p><strong>Christ-Centered</strong>: The people in this segment would identify their relationship with Christ as
+        the most important relationship in their entire lives. They see their lives as fully surrendered to Christ.</p>
+    </div>
+    <hr class="divider" />
+    <div class="key-points">
+      <h2>Key Points</h2>
+      <ul>
+        <li>It doesn't matter which segment you are in. However, your spiritual growth should be "moving".</li>
+        <li>Your most important step should be "Exploring" to "Growing in Christ".</li>
+      </ul>
+    </div>
+    <div style="text-align: center;">
+      <button *ngIf="!isAssessmentComplete" mat-raised-button color="primary" style="margin: 16px auto" (click)="navigateToAssessment()">
+        Start Assessment
+      </button>
+      <button *ngIf="isAssessmentComplete" mat-raised-button color="primary" style="margin: 16px auto" (click)="navigateToAssessment()">
+        View Assessment Results
+      </button>
+    </div>
+  </div>
+</div>

@@ -2,6 +2,7 @@ import { Component, OnInit, ChangeDetectorRef } from '@angular/core';
 import { Assessment } from '../assessment/assessment.component';
 import { Router } from '@angular/router';
 import { DrawerService } from '../drawer.service';
+import { isAssessmentComplete } from '../../utils/shared';
 
 @Component({
   selector: 'app-completed-assessment',
@@ -42,11 +43,7 @@ export class CompletedAssessmentComponent implements OnInit {
       this.assessment.invitingLevel = +localStorage.getItem('invitingLevel');
     };
 
-    if(!this.assessment.bibleStudyLevel || !this.assessment.prayerLevel || !this.assessment.serviceLevel || !this.assessment.givingLevel || !this.assessment.invitingLevel) {
-      this.isAssessmentComplete = false;
-    } else {
-      this.isAssessmentComplete = true;
-    }
+    this.isAssessmentComplete = isAssessmentComplete();
 
     this.drawerOpen = this.drawerService.getDrawerOpen();
     this.drawerService.drawerOpenChanges().subscribe((res: boolean) => {

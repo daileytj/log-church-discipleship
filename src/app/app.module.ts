@@ -20,6 +20,7 @@ import { ServicePathGuideComponent } from './service-path-guide/service-path-gui
 import { GivingPathGuideComponent } from './giving-path-guide/giving-path-guide.component';
 import { InvitingPathGuideComponent } from './inviting-path-guide/inviting-path-guide.component';
 import { DiscipleshipPathOverviewComponent } from './discipleship-path-overview/discipleship-path-overview.component';
+import { MatDividerModule } from '@angular/material/divider';
 
 @NgModule({
   declarations: [
@@ -45,7 +46,8 @@ import { DiscipleshipPathOverviewComponent } from './discipleship-path-overview/
     MatRippleModule,
     SpacerModule,
     DrawerModule,
-    MatIconModule
+    MatIconModule,
+    MatDividerModule
   ],
   providers: [],
   bootstrap: [AppComponent]

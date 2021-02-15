@@ -1,5 +1,6 @@
 import { ChangeDetectorRef, Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { isAssessmentComplete } from '../../utils/shared';
 import { DrawerService } from '../drawer.service';
 
 @Component({
@@ -9,10 +10,13 @@ import { DrawerService } from '../drawer.service';
 })
 export class DiscipleshipPathOverviewComponent implements OnInit {
   drawerOpen: boolean;
+  isAssessmentComplete: boolean;
   
   constructor(public router: Router, public drawerService: DrawerService, public changeDetectorService: ChangeDetectorRef) { }
 
   ngOnInit(): void {
+    this.isAssessmentComplete = isAssessmentComplete();
+
     this.drawerOpen = this.drawerService.getDrawerOpen();
     this.drawerService.drawerOpenChanges().subscribe((res: boolean) => {
       this.drawerOpen = res;
@@ -22,5 +26,9 @@ export class DiscipleshipPathOverviewComponent implements OnInit {
 
   openDrawer() {
     this.drawerService.setDrawerOpen(true);
+  }
+
+  navigateToAssessment() {
+    this.router.navigate(["assessment"]);
   }
 }

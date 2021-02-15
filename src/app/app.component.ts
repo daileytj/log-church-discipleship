@@ -38,7 +38,7 @@ export class AppComponent implements OnInit {
   }
 
   setActive(id: string): void {
-    this.selectedItemId = id;
+    id === 'completed-assessment' ? this.setActive('assessment') : this.selectedItemId = id;
   }
 
   navigate(id: string) {

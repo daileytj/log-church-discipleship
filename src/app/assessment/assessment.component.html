@@ -1,9 +1,9 @@
-<mat-toolbar color="primary" style="position: sticky">
+<mat-toolbar color="primary" class="toolbar">
   <button *ngIf="!drawerOpen" mat-icon-button (click)="openDrawer()" style="margin-right:16px;">
     <mat-icon>menu</mat-icon>
   </button>Discipleship Path
 </mat-toolbar>
-<mat-horizontal-stepper #stepper *ngIf="isAssessmentStarted" [linear]=true>
+<mat-horizontal-stepper #stepper *ngIf="isAssessmentStarted" [linear]=true style="padding-top: 64px">
   <mat-step>
     <ng-template matStepLabel>Bible Study</ng-template>
     <h2 class="stepper-title">How would you best describe your Bible study habits?</h2>
@@ -119,7 +119,7 @@
 </mat-horizontal-stepper>
 
 <div *ngIf="!isAssessmentStarted" fxLayout="column" fxLayoutAlign="center center" class="main-content-wrapper">
-  <div style="max-width:400px;">
+  <div style="max-width:400px;" style="margin-top: 64px;">
     <h2>
       Discipleship Path Self-Assessment
     </h2>
