@@ -18,6 +18,7 @@ h2 {
 .stepper-title {
   text-align: center;
   margin: 16px auto 32px;
+  color: map-get($pxb-black, 500);
 }
 
 .answer-card {

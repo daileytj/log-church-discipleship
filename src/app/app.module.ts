@@ -11,7 +11,7 @@ import { MatCardModule } from '@angular/material/card';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { MatStepperModule } from '@angular/material/stepper';
 import { MatRippleModule } from '@angular/material/core';
-import { SpacerModule, DrawerModule, InfoListItemModule, EmptyStateModule } from '@pxblue/angular-components';
+import { SpacerModule, DrawerModule, InfoListItemModule, EmptyStateModule, ListItemTagModule } from '@pxblue/angular-components';
 import { CompletedAssessmentComponent } from './completed-assessment/completed-assessment.component'; 
 import { MatIconModule } from '@angular/material/icon';
 import { BiblePathGuideComponent } from './bible-path-guide/bible-path-guide.component';
@@ -50,6 +50,7 @@ import { MatDividerModule } from '@angular/material/divider';
     MatDividerModule,
     InfoListItemModule,
     EmptyStateModule,
+    ListItemTagModule
   ],
   providers: [],
   bootstrap: [AppComponent]

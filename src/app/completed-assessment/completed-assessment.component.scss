@@ -1,6 +1,6 @@
 @import '~@pxblue/colors/palette.scss';
 
-h2, .guide-link {
+.guide-link {
   color: map-get($pxb-blue, 500);
 }
 
@@ -19,7 +19,20 @@ h2, .guide-link {
   }
 }
 
-
 button {
   width: 100%;
+}
+
+@media only screen and (max-width:600px) {
+  .arrow-icon {
+    transform: rotate(-90deg);
+  }
+
+  ::ng-deep .pxb-list-item-tag {
+    display: flex;
+    width: 200px;
+    height: 32px;
+    justify-content: center;
+    align-items: center;
+  }
 }

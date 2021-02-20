@@ -1,6 +1,17 @@
 <div fxLayout="column" *ngIf="isAssessmentComplete" fxLayoutAlign="center center">
   <h2 style="text-align: center;">Below are the results of your self assessment. Please use your results, along with the
     guides to further your spiritual walk.</h2>
+
+  <div class="legend" fxLayout="row" fxLayout.lt-sm="column-reverse" fxLayoutAlign="center center" fxLayoutGap="8px" style="margin: 16px auto; width: 100%;">
+    <pxb-list-item-tag label="Exploring Christ" [backgroundColor]="colors.blue[500]" fontColor="white"> </pxb-list-item-tag>
+    <mat-icon class="arrow-icon">arrow_right_alt</mat-icon>
+    <pxb-list-item-tag label="Growing In Christ" [backgroundColor]="colors.blue[500]" fontColor="white"> </pxb-list-item-tag>
+    <mat-icon class="arrow-icon">arrow_right_alt</mat-icon>
+    <pxb-list-item-tag label="Close To Christ" [backgroundColor]="colors.blue[500]" fontColor="white"> </pxb-list-item-tag>
+    <mat-icon class="arrow-icon">arrow_right_alt</mat-icon>
+    <pxb-list-item-tag label="Christ-Centered" [backgroundColor]="colors.blue[500]" fontColor="white"> </pxb-list-item-tag>
+  </div>
+
   <div class="guide-container">
       <pxb-info-list-item divider="full" class="result-item">
         <div pxb-title>Bible Study</div>
@@ -52,7 +63,7 @@
         <p pxb-right-content (click)="navigate('inviting-path-guide')" class="guide-link">View Guide</p>
       </pxb-info-list-item>
   </div>
-  <div flex fxLayout="row" fxLayoutAlign="center center" fxLayout.lt-md="column" fxLayoutGap="16px" style="margin-top: 32px; width: 100%;">
+  <div flex fxLayout="row" fxLayoutAlign="center center" fxLayout.lt-sm="column" fxLayoutGap="16px" style="margin-top: 32px; width: 100%;">
     <button mat-raised-button color="primary" (click)="retakeAssessment()">Re-take Assessment</button>
     <button mat-raised-button color="primary" (click)="navigate('overview')">Discipleship Path Overview</button>
   </div>
