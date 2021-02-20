@@ -1,8 +1,10 @@
-import { Component, OnInit, ChangeDetectorRef } from "@angular/core";
-import { DrawerNavItem } from "@pxblue/angular-components";
+import {
+  Component,
+  OnInit,
+  ChangeDetectorRef,
+} from "@angular/core";
 import { DrawerService } from "./drawer.service";
 import { NavigationEnd, Router } from "@angular/router";
-
 @Component({
   selector: "app-root",
   templateUrl: "./app.component.html",
@@ -17,7 +19,7 @@ export class AppComponent implements OnInit {
   constructor(
     public router: Router,
     public drawerService: DrawerService,
-    public changeDetectorService: ChangeDetectorRef
+    public changeDetectorService: ChangeDetectorRef,
   ) {}
 
   ngOnInit() {
@@ -27,16 +29,15 @@ export class AppComponent implements OnInit {
       this.changeDetectorService.detectChanges();
     });
 
-    this.router.events.subscribe(value => {
+    this.router.events.subscribe((value) => {
       if (value instanceof NavigationEnd) {
-          if(value.url === '/'){
-            this.setActive('overview');
-            this.pageTitle = 'Discipleship Path Overview'
-          } else
-            {
-              this.setActive(value.url.replace("/", ""));
-              this.pageTitle = this.getPageTitle(this.selectedItemId);
-            }
+        if (value.url === "/") {
+          this.setActive("overview");
+          this.pageTitle = "Discipleship Path Overview";
+        } else {
+          this.setActive(value.url.replace("/", ""));
+          this.pageTitle = this.getPageTitle(this.selectedItemId);
+        }
       }
     });
   }
@@ -50,27 +51,29 @@ export class AppComponent implements OnInit {
   }
 
   setActive(id: string): void {
-    id === 'completed-assessment' ? this.setActive('assessment') : this.selectedItemId = id;
+    id === "completed-assessment"
+      ? this.setActive("assessment")
+      : (this.selectedItemId = id);
   }
 
   getPageTitle(id: string): string {
     switch (id) {
       case "assessment":
-        return "Discipleship Path"
+        return "Discipleship Path";
       case "completed-assessment":
-        return "Assessment Results"
+        return "Assessment Results";
       case "overview":
-        return "Discipleship Path Overview"
+        return "Discipleship Path Overview";
       case "bible-path-guide":
-        return "Bible Path Guide"
+        return "Bible Path Guide";
       case "prayer-path-guide":
-        return "Prayer Path Guide"
+        return "Prayer Path Guide";
       case "service-path-guide":
-        return "Service Path Guide"
+        return "Service Path Guide";
       case "giving-path-guide":
-        return "Giving Path Guide"
+        return "Giving Path Guide";
       case "inviting-path-guide":
-        return "Inviting Path Guide"
+        return "Inviting Path Guide";
     }
   }
 
@@ -99,7 +102,7 @@ export class AppComponent implements OnInit {
         break;
       case "inviting-path-guide":
         this.router.navigate(["inviting-path-guide"]);
-        default: 
+      default:
     }
   }
 }
