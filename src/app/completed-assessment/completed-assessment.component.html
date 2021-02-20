@@ -1,44 +1,65 @@
 <div fxLayout="column" *ngIf="isAssessmentComplete" fxLayoutAlign="center center">
-  <h2 style="text-align: center;">Based on the results of your assessment we recommend you look at
-    the following resources:</h2>
+  <h2 style="text-align: center;">Below are the results of your self assessment. Please use your results, along with the
+    guides to further your spiritual walk.</h2>
   <div class="guide-container">
-    <div class="guide-link">
-      <a mat-button href="google.com" *ngIf="assessment.bibleStudyLevel === 1">Bible Study Guide 101</a>
-      <a mat-button href="google.com" *ngIf="assessment.bibleStudyLevel === 2">Bible Study Guide 201</a>
-      <a mat-button href="google.com" *ngIf="assessment.bibleStudyLevel === 3">Bible Study Guide 301</a>
-      <a mat-button href="google.com" *ngIf="assessment.bibleStudyLevel === 4">Bible Study Guide 401</a>
-    </div>
-    <div class="guide-link">
-      <a mat-button href="google.com" *ngIf="assessment.prayerLevel === 1">Prayer Guide 101</a>
-      <a mat-button href="google.com" *ngIf="assessment.prayerLevel === 2">Prayer Guide 201</a>
-      <a mat-button href="google.com" *ngIf="assessment.prayerLevel === 3">Prayer Guide 301</a>
-      <a mat-button href="google.com" *ngIf="assessment.prayerLevel === 4">Prayer Guide 401</a>
-    </div>
-    <div class="guide-link">
-      <a mat-button href="google.com" *ngIf="assessment.serviceLevel === 1">Service Guide 101</a>
-      <a mat-button href="google.com" *ngIf="assessment.serviceLevel === 2">Service Guide 201</a>
-      <a mat-button href="google.com" *ngIf="assessment.serviceLevel === 3">Service Guide 301</a>
-      <a mat-button href="google.com" *ngIf="assessment.serviceLevel === 4">Service Guide 401</a>
-    </div>
-    <div class="guide-link">
-      <a mat-button href="google.com" *ngIf="assessment.givingLevel === 1">Giving Guide 101</a>
-      <a mat-button href="google.com" *ngIf="assessment.givingLevel === 2">Giving Guide 201</a>
-      <a mat-button href="google.com" *ngIf="assessment.givingLevel === 3">Giving Guide 301</a>
-      <a mat-button href="google.com" *ngIf="assessment.givingLevel === 4">Giving Guide 401</a>
-    </div>
-    <div class="guide-link">
-      <a mat-button href="google.com" *ngIf="assessment.invitingLevel === 1">Inviting Guide 101</a>
-      <a mat-button href="google.com" *ngIf="assessment.invitingLevel === 2">Inviting Guide 201</a>
-      <a mat-button href="google.com" *ngIf="assessment.invitingLevel === 3">Inviting Guide 301</a>
-      <a mat-button href="google.com" *ngIf="assessment.invitingLevel === 4">Inviting Guide 401</a>
-    </div>
+      <pxb-info-list-item divider="full" class="result-item">
+        <div pxb-title>Bible Study</div>
+        <mat-icon [style.color]="colors.blue[500]" pxb-icon>menu_book</mat-icon>
+        <div pxb-subtitle *ngIf="assessment.bibleStudyLevel === 1">Exploring Christ</div>
+        <div pxb-subtitle *ngIf="assessment.bibleStudyLevel === 2">Growing In Christ</div>
+        <div pxb-subtitle *ngIf="assessment.bibleStudyLevel === 3">Close To Christ</div>
+        <div pxb-subtitle *ngIf="assessment.bibleStudyLevel === 4">Christ-Centered</div>
+        <p pxb-right-content (click)="navigate('bible-path-guide')" class="guide-link">View Guide</p>
+      </pxb-info-list-item>
+
+      <pxb-info-list-item divider="full" class="result-item">
+        <div pxb-title>Prayer</div>
+        <mat-icon [style.color]="colors.blue[500]" pxb-icon>chat</mat-icon>
+        <div pxb-subtitle *ngIf="assessment.prayerLevel === 1">Exploring Christ</div>
+        <div pxb-subtitle *ngIf="assessment.prayerLevel === 2">Growing In Christ</div>
+        <div pxb-subtitle *ngIf="assessment.prayerLevel === 3">Close To Christ</div>
+        <div pxb-subtitle *ngIf="assessment.prayerLevel === 4">Christ-Centered</div>
+        <p pxb-right-content (click)="navigate('prayer-path-guide')" class="guide-link">View Guide</p>
+      </pxb-info-list-item>
+
+      <pxb-info-list-item divider="full" class="result-item">
+        <div pxb-title>Service</div>
+        <mat-icon [style.color]="colors.blue[500]" pxb-icon>work</mat-icon>
+        <div pxb-subtitle *ngIf="assessment.serviceLevel === 1">Exploring Christ</div>
+        <div pxb-subtitle *ngIf="assessment.serviceLevel === 2">Growing In Christ</div>
+        <div pxb-subtitle *ngIf="assessment.serviceLevel === 3">Close To Christ</div>
+        <div pxb-subtitle *ngIf="assessment.serviceLevel === 4">Christ-Centered</div>
+        <p pxb-right-content (click)="navigate('service-path-guide')" class="guide-link">View Guide</p>
+      </pxb-info-list-item>
+
+      <pxb-info-list-item divider="full" class="result-item">
+        <div pxb-title>Giving</div>
+        <mat-icon [style.color]="colors.blue[500]" pxb-icon>attach_money</mat-icon>
+        <div pxb-subtitle *ngIf="assessment.givingLevel === 1">Exploring Christ</div>
+        <div pxb-subtitle *ngIf="assessment.givingLevel === 2">Growing In Christ</div>
+        <div pxb-subtitle *ngIf="assessment.givingLevel === 3">Close To Christ</div>
+        <div pxb-subtitle *ngIf="assessment.givingLevel === 4">Christ-Centered</div>
+        <p pxb-right-content (click)="navigate('giving-path-guide')" class="guide-link">View Guide</p>
+      </pxb-info-list-item>
+
+      <pxb-info-list-item divider="full" class="result-item">
+        <div pxb-title>Inviting</div>
+        <mat-icon [style.color]="colors.blue[500]" pxb-icon>group</mat-icon>
+        <div pxb-subtitle *ngIf="assessment.invitingLevel === 1">Exploring Christ</div>
+        <div pxb-subtitle *ngIf="assessment.invitingLevel === 2">Growing In Christ</div>
+        <div pxb-subtitle *ngIf="assessment.invitingLevel === 3">Close To Christ</div>
+        <div pxb-subtitle *ngIf="assessment.invitingLevel === 4">Christ-Centered</div>
+        <p pxb-right-content (click)="navigate('inviting-path-guide')" class="guide-link">View Guide</p>
+      </pxb-info-list-item>
   </div>
-  <h3 style="text-align: center; margin: 16px auto;">If you have gone through all of our guides or feel that your
-    spiritual walk has shifted feel free to retake the assessment.</h3>
-  <button mat-raised-button color="primary" (click)="retakeAssessment()">Re-take Assessment</button>
+  <div flex fxLayout="row" fxLayoutAlign="center center" fxLayout.lt-md="column" fxLayoutGap="16px" style="margin-top: 32px; width: 100%;">
+    <button mat-raised-button color="primary" (click)="retakeAssessment()">Re-take Assessment</button>
+    <button mat-raised-button color="primary" (click)="navigate('overview')">Discipleship Path Overview</button>
+  </div>
 </div>
 
 <div fxLayout="column" *ngIf="!isAssessmentComplete" fxLayoutAlign="center center">
-  <h3 style="text-align: center;">Oops! Looks like you haven't completed an assessment yet. Click the button below to take the assessment.</h3>
+  <h3 style="text-align: center;">Oops! Looks like you haven't completed an assessment yet. Click the button below to
+    take the assessment.</h3>
   <button mat-raised-button color="primary" (click)="retakeAssessment()">Take Assessment</button>
 </div>

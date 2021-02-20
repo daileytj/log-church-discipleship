@@ -1,8 +1,21 @@
 @import '~@pxblue/colors/palette.scss';
 
+h2, .guide-link {
+  color: map-get($pxb-blue, 500);
+}
+
+.guide-container, .result-item {
+  width: 100%
+}
+
+.guide-container {
+  margin-top: 8px;
+}
+
 .guide-link {
-  a{
-    text-decoration: none;
-    color: map-get($pxb-black, 500);
-  };
+  margin-bottom: 0;
+}
+
+button {
+  width: 100%;
 }

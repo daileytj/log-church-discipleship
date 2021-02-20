@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Assessment } from '../assessment/assessment.component';
 import { Router } from '@angular/router';
 import { isAssessmentComplete } from '../../utils/shared';
+import * as Colors from '@pxblue/colors';
 
 @Component({
   selector: 'app-completed-assessment',
@@ -18,6 +19,7 @@ export class CompletedAssessmentComponent implements OnInit {
     givingLevel: null,
     invitingLevel: null
   }
+  colors = Colors;
 
   constructor(public router: Router) { }
 
@@ -43,6 +45,29 @@ export class CompletedAssessmentComponent implements OnInit {
     };
 
     this.isAssessmentComplete = isAssessmentComplete();
+  }
+
+  navigate(id: string) {
+    switch (id) {
+      case "overview":
+        this.router.navigate(["overview"]);
+        break;
+      case "bible-path-guide":
+        this.router.navigate(["bible-path-guide"]);
+        break;
+      case "prayer-path-guide":
+        this.router.navigate(["prayer-path-guide"]);
+        break;
+      case "service-path-guide":
+        this.router.navigate(["service-path-guide"]);
+        break;
+      case "giving-path-guide":
+        this.router.navigate(["giving-path-guide"]);
+        break;
+      case "inviting-path-guide":
+        this.router.navigate(["inviting-path-guide"]);
+      default:
+    }
   }
 
   retakeAssessment() {

@@ -6,6 +6,10 @@
   height: 100vh;
 }
 
+h2 {
+  color: map-get($pxb-blue, 500);
+}
+
 .active {
   background-color: map-get($pxb-blue, 500);
   color: map-get($pxb-white, 50)
@@ -13,7 +17,7 @@
 
 .stepper-title {
   text-align: center;
-  margin: 16px auto;
+  margin: 16px auto 32px;
 }
 
 .answer-card {
