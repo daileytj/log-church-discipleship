@@ -1,10 +1,5 @@
-<mat-toolbar color="primary" class="toolbar"><button *ngIf="!drawerOpen" mat-icon-button (click)="openDrawer()"
-    style="margin-right:16px;">
-    <mat-icon>menu</mat-icon>
-  </button>Assessment Results</mat-toolbar>
-
-<div fxLayout="column" *ngIf="isAssessmentComplete" class="main-content-wrapper" fxLayoutAlign="center center">
-  <h2 style="text-align: center; margin: 64px auto;">Based on the results of your assessment we recommend you look at
+<div fxLayout="column" *ngIf="isAssessmentComplete" fxLayoutAlign="center center">
+  <h2 style="text-align: center;">Based on the results of your assessment we recommend you look at
     the following resources:</h2>
   <div class="guide-container">
     <div class="guide-link">
@@ -43,7 +38,7 @@
   <button mat-raised-button color="primary" (click)="retakeAssessment()">Re-take Assessment</button>
 </div>
 
-<div fxLayout="column" *ngIf="!isAssessmentComplete" class="main-content-wrapper" fxLayoutAlign="center center">
-  <h3 style="text-align: center; margin: 16px auto;">Oops! Looks like you haven't completed an assessment yet. Click the button below to take the assessment.</h3>
+<div fxLayout="column" *ngIf="!isAssessmentComplete" fxLayoutAlign="center center">
+  <h3 style="text-align: center;">Oops! Looks like you haven't completed an assessment yet. Click the button below to take the assessment.</h3>
   <button mat-raised-button color="primary" (click)="retakeAssessment()">Take Assessment</button>
 </div>

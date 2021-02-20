@@ -12,6 +12,7 @@ export class AppComponent implements OnInit {
   title = "log-church-discipleship";
   drawerOpen: boolean;
   selectedItemId: string;
+  pageTitle: string;
 
   constructor(
     public router: Router,
@@ -28,9 +29,20 @@ export class AppComponent implements OnInit {
 
     this.router.events.subscribe(value => {
       if (value instanceof NavigationEnd) {
-          value.url === '/' ? this.setActive('overview') : this.setActive(value.url.replace("/", ""));
+          if(value.url === '/'){
+            this.setActive('overview');
+            this.pageTitle = 'Discipleship Path Overview'
+          } else
+            {
+              this.setActive(value.url.replace("/", ""));
+              this.pageTitle = this.getPageTitle(this.selectedItemId);
+            }
       }
     });
+  }
+
+  openDrawer() {
+    this.drawerService.setDrawerOpen(true);
   }
 
   closeDrawer() {
@@ -39,6 +51,27 @@ export class AppComponent implements OnInit {
 
   setActive(id: string): void {
     id === 'completed-assessment' ? this.setActive('assessment') : this.selectedItemId = id;
+  }
+
+  getPageTitle(id: string): string {
+    switch (id) {
+      case "assessment":
+        return "Discipleship Path"
+      case "completed-assessment":
+        return "Assessment Results"
+      case "overview":
+        return "Discipleship Path Overview"
+      case "bible-path-guide":
+        return "Bible Path Guide"
+      case "prayer-path-guide":
+        return "Prayer Path Guide"
+      case "service-path-guide":
+        return "Service Path Guide"
+      case "giving-path-guide":
+        return "Giving Path Guide"
+      case "inviting-path-guide":
+        return "Inviting Path Guide"
+    }
   }
 
   navigate(id: string) {

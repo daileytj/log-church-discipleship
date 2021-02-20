@@ -1,7 +1,6 @@
-import { Component, OnInit, ChangeDetectorRef } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Assessment } from '../assessment/assessment.component';
 import { Router } from '@angular/router';
-import { DrawerService } from '../drawer.service';
 import { isAssessmentComplete } from '../../utils/shared';
 
 @Component({
@@ -20,7 +19,7 @@ export class CompletedAssessmentComponent implements OnInit {
     invitingLevel: null
   }
 
-  constructor(public router: Router, public drawerService: DrawerService, public changeDetectorService: ChangeDetectorRef) { }
+  constructor(public router: Router) { }
 
   ngOnInit(): void {
     if (localStorage.getItem('bibleStudyLevel')) {
@@ -44,16 +43,6 @@ export class CompletedAssessmentComponent implements OnInit {
     };
 
     this.isAssessmentComplete = isAssessmentComplete();
-
-    this.drawerOpen = this.drawerService.getDrawerOpen();
-    this.drawerService.drawerOpenChanges().subscribe((res: boolean) => {
-      this.drawerOpen = res;
-      this.changeDetectorService.detectChanges();
-    });
-  }
-
-  openDrawer() {
-    this.drawerService.setDrawerOpen(true);
   }
 
   retakeAssessment() {

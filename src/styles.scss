@@ -1,4 +1,4 @@
-
+@import '~@pxblue/colors/palette.scss';
 // Custom Theming for Angular Material
 // For more information: https://material.angular.io/guide/theming
 @import '~@angular/material/theming';
@@ -35,4 +35,9 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 .toolbar {
   position: fixed;
   z-index: 1000;
+}
+
+a, a:visited {
+  color: map-get($pxb-blue, 500);
+  text-decoration: none;
 }

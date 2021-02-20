@@ -1,7 +1,6 @@
-import { ChangeDetectorRef, Component, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { isAssessmentComplete } from '../../utils/shared';
-import { DrawerService } from '../drawer.service';
 
 @Component({
   selector: 'app-discipleship-path-overview',
@@ -9,23 +8,12 @@ import { DrawerService } from '../drawer.service';
   styleUrls: ['./discipleship-path-overview.component.scss']
 })
 export class DiscipleshipPathOverviewComponent implements OnInit {
-  drawerOpen: boolean;
   isAssessmentComplete: boolean;
   
-  constructor(public router: Router, public drawerService: DrawerService, public changeDetectorService: ChangeDetectorRef) { }
+  constructor(public router: Router) { }
 
   ngOnInit(): void {
     this.isAssessmentComplete = isAssessmentComplete();
-
-    this.drawerOpen = this.drawerService.getDrawerOpen();
-    this.drawerService.drawerOpenChanges().subscribe((res: boolean) => {
-      this.drawerOpen = res;
-      this.changeDetectorService.detectChanges();
-    });
-  }
-
-  openDrawer() {
-    this.drawerService.setDrawerOpen(true);
   }
 
   navigateToAssessment() {

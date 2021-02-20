@@ -1,12 +1,20 @@
-.main-content-wrapper {
-  height: calc(100vh - 64px);
-  max-width: 600px;
-  padding: 32px;
-  margin: 0 auto;
+@import '~@pxblue/colors/palette.scss';
+
+h1, h2 {
+  color: map-get($pxb-blue, 500);
 }
 
-@media only screen and (max-width:600px) {
-  .main-content-wrapper {
-    height: auto;
-  }
+.exploring-christ, .growing-in-christ, .close-to-christ, .christ-centered {
+  margin-top: 8px;
+  width: 100%;
+}
+
+.divider {
+  border: 1px solid map-get($pxb-gray, 200);
+  width: 100%;
+  margin: 16px 0 16px;
+}
+
+li {
+  margin-top: 8px;
 }

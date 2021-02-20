@@ -1,6 +1,5 @@
 import { Component, OnInit, ChangeDetectorRef } from '@angular/core';
 import { Router } from '@angular/router';
-import { DrawerService } from '../drawer.service';
 
 export interface Assessment {
   bibleStudyLevel: number;
@@ -31,7 +30,7 @@ export class AssessmentComponent implements OnInit {
     invitingLevel: null
   }
 
-  constructor(public router: Router, public drawerService: DrawerService, public changeDetectorService: ChangeDetectorRef) { }
+  constructor(public router: Router, public changeDetectorService: ChangeDetectorRef) { }
 
   ngOnInit(): void {
     if (localStorage.getItem('bibleStudyLevel')) {
@@ -46,7 +45,7 @@ export class AssessmentComponent implements OnInit {
 
     if (localStorage.getItem('serviceLevel')) {
       this.selectedServiceAnswer = localStorage.getItem('serviceLevel');
-      this.assessment.serviceLevel = +this.selectedServiceAnswer;
+      this.assessment.serviceLevel = +this.selectServiceAnswer;
     };
 
     if (localStorage.getItem('givingLevel')) {
@@ -62,12 +61,6 @@ export class AssessmentComponent implements OnInit {
     if (this.selectedBibleAnswer && this.selectedPrayerAnswer && this.selectedServiceAnswer && this.selectedGivingAnswer && this.selectedInvitingAnswer) {
       this.completeAssessment();
     }
-
-    this.drawerOpen = this.drawerService.getDrawerOpen();
-    this.drawerService.drawerOpenChanges().subscribe((res: boolean) => {
-      this.drawerOpen = res;
-      this.changeDetectorService.detectChanges();
-    });
   }
 
   startAssessment() {
@@ -106,10 +99,6 @@ export class AssessmentComponent implements OnInit {
 
   completeAssessment() {
     this.router.navigate(['/completed-assessment']);
-  }
-
-  openDrawer() {
-    this.drawerService.setDrawerOpen(true);
   }
 
 }

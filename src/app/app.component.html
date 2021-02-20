@@ -6,26 +6,31 @@
       </button>
     </pxb-drawer-header>
     <pxb-drawer-body>
-      <pxb-drawer-nav-item hidePadding=true title="Discipleship Path Overview" [selected]="selectedItemId === 'overview'"
-      (select)="setActive('overview'); navigate('overview'); closeDrawer();">
+      <pxb-drawer-nav-item hidePadding=true title="Discipleship Path Overview"
+        [selected]="selectedItemId === 'overview'"
+        (select)="setActive('overview'); navigate('overview'); closeDrawer();">
       </pxb-drawer-nav-item>
       <pxb-drawer-nav-item hidePadding=true title="Assessment" [selected]="selectedItemId === 'assessment'"
-      (select)="setActive('assessment'); navigate('assessment'); closeDrawer();">
+        (select)="setActive('assessment'); navigate('assessment'); closeDrawer();">
       </pxb-drawer-nav-item>
       <pxb-drawer-nav-item hidePadding=true title="Bible Path Guide" [selected]="selectedItemId === 'bible-path-guide'"
-      (select)="setActive('bible-path-guide'); navigate('bible-path-guide'); closeDrawer();">
+        (select)="setActive('bible-path-guide'); navigate('bible-path-guide'); closeDrawer();">
       </pxb-drawer-nav-item>
-      <pxb-drawer-nav-item hidePadding=true title="Prayer Path Guide" [selected]="selectedItemId === 'prayer-path-guide'"
-      (select)="setActive('prayer-path-guide'); navigate('prayer-path-guide'); closeDrawer();">
+      <pxb-drawer-nav-item hidePadding=true title="Prayer Path Guide"
+        [selected]="selectedItemId === 'prayer-path-guide'"
+        (select)="setActive('prayer-path-guide'); navigate('prayer-path-guide'); closeDrawer();">
       </pxb-drawer-nav-item>
-      <pxb-drawer-nav-item hidePadding=true title="Service Path Guide" [selected]="selectedItemId === 'service-path-guide'"
-      (select)="setActive('service-path-guide'); navigate('service-path-guide'); closeDrawer();">
+      <pxb-drawer-nav-item hidePadding=true title="Service Path Guide"
+        [selected]="selectedItemId === 'service-path-guide'"
+        (select)="setActive('service-path-guide'); navigate('service-path-guide'); closeDrawer();">
       </pxb-drawer-nav-item>
-      <pxb-drawer-nav-item hidePadding=true title="Giving Path Guide" [selected]="selectedItemId === 'giving-path-guide'"
-      (select)="setActive('giving-path-guide'); navigate('giving-path-guide'); closeDrawer();">
+      <pxb-drawer-nav-item hidePadding=true title="Giving Path Guide"
+        [selected]="selectedItemId === 'giving-path-guide'"
+        (select)="setActive('giving-path-guide'); navigate('giving-path-guide'); closeDrawer();">
       </pxb-drawer-nav-item>
-      <pxb-drawer-nav-item hidePadding=true title="Inviting Path Guide" [selected]="selectedItemId === 'inviting-path-guide'"
-      (select)="setActive('inviting-path-guide'); navigate('inviting-path-guide'); closeDrawer();">
+      <pxb-drawer-nav-item hidePadding=true title="Inviting Path Guide"
+        [selected]="selectedItemId === 'inviting-path-guide'"
+        (select)="setActive('inviting-path-guide'); navigate('inviting-path-guide'); closeDrawer();">
       </pxb-drawer-nav-item>
 
     </pxb-drawer-body>
@@ -34,6 +39,15 @@
     </pxb-drawer-footer>
   </pxb-drawer>
   <div pxb-content>
-    <router-outlet></router-outlet>
+    <mat-toolbar color="primary" class="toolbar">
+      <button *ngIf="!drawerOpen" mat-icon-button (click)="openDrawer()" style="margin-right:16px;">
+        <mat-icon>menu</mat-icon>
+      </button>{{pageTitle}}
+    </mat-toolbar>
+    <div class="main-content-wrapper" fxLayout="column" fxLayoutAlign="center center">
+      <div class="content-wrapper">
+        <router-outlet></router-outlet>
+      </div>
+    </div>
   </div>
 </pxb-drawer-layout>
