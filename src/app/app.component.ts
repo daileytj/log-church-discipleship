@@ -2,6 +2,8 @@ import {
   Component,
   OnInit,
   ChangeDetectorRef,
+  ViewChild,
+  ElementRef,
 } from "@angular/core";
 import { DrawerService } from "./drawer.service";
 import { NavigationEnd, Router } from "@angular/router";
@@ -15,6 +17,7 @@ export class AppComponent implements OnInit {
   drawerOpen: boolean;
   selectedItemId: string;
   pageTitle: string;
+  @ViewChild('scrollHack') scrollHack: ElementRef;
 
   constructor(
     public router: Router,
@@ -31,6 +34,8 @@ export class AppComponent implements OnInit {
 
     this.router.events.subscribe((value) => {
       if (value instanceof NavigationEnd) {
+        this.scrollHack.nativeElement.scrollIntoView();
+
         if (value.url === "/") {
           this.setActive("overview");
           this.pageTitle = "Discipleship Path Overview";
