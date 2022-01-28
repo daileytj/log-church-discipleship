@@ -2,7 +2,7 @@
   <mat-horizontal-stepper #stepper [linear]=true>
     <mat-step>
       <ng-template matStepLabel>Bible Study</ng-template>
-      <h2 class="stepper-title">How would you best describe your Bible study habits?</h2>
+      <h2 class="stepper-title">How would you best describe your <strong>BIBLE STUDY</strong> habits?</h2>
       <div class="card-row" fxLayout="row" fxLayoutGap="16px" fxLayout.lt-sm="column">
         <mat-card fxFlex matRipple class="answer-card" [class.active]="selectedBibleAnswer === '1'"
           (click)="selectBibleAnswer('1')">I never or seldom read the bible.</mat-card>
@@ -24,7 +24,7 @@
     </mat-step>
     <mat-step>
       <ng-template matStepLabel>Prayer</ng-template>
-      <h2 class="stepper-title">How would you best describe your prayer habits?</h2>
+      <h2 class="stepper-title">How would you best describe your <strong>PRAYER</strong> habits?</h2>
       <div class="card-row" fxLayout="row" fxLayoutGap="16px" fxLayout.lt-sm="column">
         <mat-card fxFlex matRipple class="answer-card" [class.active]="selectedPrayerAnswer === '1'"
           (click)="selectPrayerAnswer('1')">I never or seldom pray.</mat-card>
@@ -45,7 +45,7 @@
     </mat-step>
     <mat-step>
       <ng-template matStepLabel>Service</ng-template>
-      <h2 class="stepper-title">How would you best describe your serving habits?</h2>
+      <h2 class="stepper-title">How would you best describe your <strong>SERVING</strong> habits?</h2>
       <div class="card-row" fxLayout="row" fxLayoutGap="16px" fxLayout.lt-sm="column">
         <mat-card fxFlex matRipple class="answer-card" [class.active]="selectedServiceAnswer === '1'"
           (click)="selectServiceAnswer('1')">I never or seldom volunteer at the church. I haven't recognized the need to
@@ -69,7 +69,7 @@
     </mat-step>
     <mat-step>
       <ng-template matStepLabel>Giving</ng-template>
-      <h2 class="stepper-title">How would you best describe your giving habits?</h2>
+      <h2 class="stepper-title">How would you best describe your <strong>GIVING</strong> habits?</h2>
       <div class="card-row" fxLayout="row" fxLayoutGap="16px" fxLayout.lt-sm="column">
         <mat-card fxFlex matRipple class="answer-card" [class.active]="selectedGivingAnswer === '1'"
           (click)="selectGivingAnswer('1')">I never or seldom give to the church.</mat-card>
@@ -92,7 +92,7 @@
     </mat-step>
     <mat-step>
       <ng-template matStepLabel>Inviting</ng-template>
-      <h2 class="stepper-title">How would you best describe your inviting habits?</h2>
+      <h2 class="stepper-title">How would you best describe your <strong>INVITING</strong> habits?</h2>
       <div class="card-row" fxLayout="row" fxLayoutGap="16px" fxLayout.lt-sm="column">
         <mat-card fxFlex matRipple class="answer-card" [class.active]="selectedInvitingAnswer === '1'"
           (click)="selectInvitingAnswer('1')">I never or seldom have invited people to church. I don't want to force my

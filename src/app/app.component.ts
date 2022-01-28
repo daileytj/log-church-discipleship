@@ -17,12 +17,12 @@ export class AppComponent implements OnInit {
   drawerOpen: boolean;
   selectedItemId: string;
   pageTitle: string;
-  @ViewChild('scrollHack') scrollHack: ElementRef;
+  @ViewChild("scrollHack") scrollHack: ElementRef;
 
   constructor(
     public router: Router,
     public drawerService: DrawerService,
-    public changeDetectorService: ChangeDetectorRef,
+    public changeDetectorService: ChangeDetectorRef
   ) {}
 
   ngOnInit() {
@@ -67,6 +67,8 @@ export class AppComponent implements OnInit {
         return "Discipleship Path";
       case "completed-assessment":
         return "Assessment Results";
+      case "faq":
+        return "FAQ";
       case "overview":
         return "Discipleship Path Overview";
       case "bible-path-guide":
@@ -89,6 +91,9 @@ export class AppComponent implements OnInit {
         break;
       case "completed-assessment":
         this.router.navigate(["completed-assessment"]);
+        break;
+      case "faq":
+        this.router.navigate(["faq"]);
         break;
       case "overview":
         this.router.navigate(["overview"]);

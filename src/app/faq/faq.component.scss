@@ -1,0 +1,27 @@
+@import "~@pxblue/colors/palette.scss";
+
+h1,
+h2,
+h3 {
+  color: map-get($pxb-blue, 500);
+}
+
+h3 {
+  margin-top: 24px;
+  margin-bottom: 0px;
+}
+
+.question {
+  margin-top: 32px;
+  width: 100%;
+}
+
+.divider {
+  border: 1px solid map-get($pxb-gray, 200);
+  width: 100%;
+  margin: 16px 0 16px;
+}
+
+li {
+  margin-top: 8px;
+}
